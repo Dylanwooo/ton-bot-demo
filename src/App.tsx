@@ -1,5 +1,5 @@
 import { useCallback, useEffect } from "react";
-import { useTonAddress } from "@tonconnect/ui-react";
+import { useTonAddress, useTonWallet } from "@tonconnect/ui-react";
 import "./App.css";
 
 import { MainButton, useShowPopup } from "@vkruglikov/react-telegram-web-app";
@@ -11,6 +11,7 @@ const client = new StonApiClient();
 function App() {
   const showPopup = useShowPopup();
   const userFriendlyAddress = useTonAddress();
+  const wallet = useTonWallet();
 
   const asyncFetch = useCallback(async () => {
     if (!userFriendlyAddress) return;
@@ -31,9 +32,13 @@ function App() {
   return (
     <div className="Container">
       <Header />
-
       {userFriendlyAddress && <p>Wallet address: {userFriendlyAddress}</p>}
-
+      {wallet && (
+        <div>
+          <span>Connected wallet: {wallet?.name}</span>
+          <span>Device: {wallet?.device.appName}</span>
+        </div>
+      )}
       <MainButton text="SHOW POPUP" onClick={handleClick} />
     </div>
   );
