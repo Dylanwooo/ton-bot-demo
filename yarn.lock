@@ -364,15 +364,17 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@twa-dev/sdk@^6.7.1":
-  version "6.7.1"
-  resolved "https://registry.yarnpkg.com/@twa-dev/sdk/-/sdk-6.7.1.tgz#00531b7958e6ea1ce6a03931e13ef9afd5add55c"
+"@twa-dev/sdk@^7.0.0":
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/@twa-dev/sdk/-/sdk-7.0.0.tgz#6d4dafe856efbe188bd09e1bb286d5af8ec80d67"
+  integrity sha512-OZvqGGrdrgE0xU/IGjvsGKKouia5bTu6rA/BOOU6pJYLu776nQJs/HNFl7lwW16RONf1vvPqeV8XximsuzZ9Iw==
   dependencies:
-    "@twa-dev/types" "^6.7.0"
+    "@twa-dev/types" "^7.0.0"
 
-"@twa-dev/types@^6.7.0":
-  version "6.7.0"
-  resolved "https://registry.yarnpkg.com/@twa-dev/types/-/types-6.7.0.tgz#0a584202ff376195b46b907bd8348de642a1c103"
+"@twa-dev/types@^7.0.0":
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/@twa-dev/types/-/types-7.0.0.tgz#4bfa26472144704a12ec9a4bf91f90918afcaba0"
+  integrity sha512-LBnMklxORuXd/ypv9gFKcQVNJkCktkeuU+2V6B5Ww7dcxDCoYBAKkNnIwEQ3cShq+cxTi96jC/CqWhgDMQ7AXQ==
 
 "@types/json-schema@^7.0.12":
   version "7.0.12"
@@ -493,6 +495,11 @@
     "@babel/plugin-transform-react-jsx-self" "^7.22.5"
     "@babel/plugin-transform-react-jsx-source" "^7.22.5"
     react-refresh "^0.14.0"
+
+"@vkruglikov/react-telegram-web-app@^2.1.9":
+  version "2.1.9"
+  resolved "https://registry.yarnpkg.com/@vkruglikov/react-telegram-web-app/-/react-telegram-web-app-2.1.9.tgz#a116f6a2fd78814f0958da1f8d7c1429d41bb8e3"
+  integrity sha512-m8D5oUuSQN1z8xiG3ufh7tBbWpmp4zLtZv2rNsC2LP0Rp5vJI/hwZNk65h7wLDE740wPlE2R6bOSikm6FdUTtQ==
 
 acorn-jsx@^5.3.2:
   version "5.3.2"
