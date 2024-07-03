@@ -1,14 +1,19 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.tsx'
-import './index.css'
+import { TonConnectUIProvider } from "@tonconnect/ui-react";
+import ReactDOM from "react-dom/client";
+import App from "./App.tsx";
+import "./index.css";
 
-import WebApp from '@twa-dev/sdk'
+import WebApp from "@twa-dev/sdk";
 
 WebApp.ready();
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
+ReactDOM.createRoot(document.getElementById("root")!).render(
+  <TonConnectUIProvider
+    manifestUrl="https://ton-bot-demo.vercel.app/tonconnect-manifest.json"
+    actionsConfiguration={{
+      twaReturnUrl: "https://t.me/PacSampleBot",
+    }}
+  >
     <App />
-  </React.StrictMode>,
-)
+  </TonConnectUIProvider>
+);

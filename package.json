@@ -10,6 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@ston-fi/api": "^0.9.0",
+    "@tonconnect/ui-react": "^2.0.5",
     "@twa-dev/sdk": "^7.0.0",
     "@vitejs/plugin-basic-ssl": "^1.0.1",
     "@vkruglikov/react-telegram-web-app": "^2.1.9",

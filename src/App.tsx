@@ -1,27 +1,41 @@
-import { useState } from "react";
-
+import { useCallback, useEffect } from "react";
+import { useTonAddress } from "@tonconnect/ui-react";
 import "./App.css";
 
 import { MainButton, useShowPopup } from "@vkruglikov/react-telegram-web-app";
+import { StonApiClient } from "@ston-fi/api";
+import { Header } from "./Header";
+
+const client = new StonApiClient();
 
 function App() {
-  const [count, setCount] = useState(0);
   const showPopup = useShowPopup();
+  const userFriendlyAddress = useTonAddress();
+
+  const asyncFetch = useCallback(async () => {
+    if (!userFriendlyAddress) return;
+
+    const walletAssets = await client.getWalletAssets(userFriendlyAddress);
+
+    console.log("walletAssets", walletAssets);
+  }, [userFriendlyAddress]);
+
+  useEffect(() => {
+    asyncFetch();
+  }, [asyncFetch]);
 
   const handleClick = () =>
     showPopup({
-      message: "Hello, I am popup",
+      message: "Hello, welcome to Ton Defi!",
     });
   return (
-    <>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-      </div>
-      <button onClick={handleClick}>Show Popup</button>
+    <div className="Container">
+      <Header />
+
+      {userFriendlyAddress && <p>Wallet address: {userFriendlyAddress}</p>}
+
       <MainButton text="SHOW POPUP" onClick={handleClick} />
-    </>
+    </div>
   );
 }
 
